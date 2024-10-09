@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmvkdft3qmbs6"]
+
+[ext_resource type="Script" path="res://scenes/testlevel.gd" id="1_0qjkh"]
+[ext_resource type="PackedScene" uid="uid://cinll7vto07tg" path="res://scenes/player.tscn" id="1_0sfp7"]
+[ext_resource type="PackedScene" uid="uid://cypj2dnv7vlfx" path="res://scenes/enemy.tscn" id="2_cwasa"]
+[ext_resource type="PackedScene" uid="uid://cslwla8d5y4ij" path="res://scenes/enemyspawner.tscn" id="4_4ufw2"]
+[ext_resource type="Texture2D" uid="uid://djs7snpnck3fl" path="res://sprites/background.png" id="5_ao0l2"]
+[ext_resource type="PackedScene" uid="uid://bxjcbinum47fo" path="res://scenes/healthbar.tscn" id="6_fs1ud"]
+[ext_resource type="PackedScene" uid="uid://dhe1ry8vmw80t" path="res://scenes/pathEnemySpawner.tscn" id="7_xw3mg"]
+
+[sub_resource type="Curve2D" id="Curve2D_b7t4s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 508, 15, 0, 0, 0, 0, 506, 269, 0, 0, 0, 0, 660, 306, 0, 0, 0, 0, 726, 346, 0, 0, 0, 0, 792, 394, 0, 0, 0, 0, 842, 480, 0, 0, 0, 0, 842, 582, 0, 0, 0, 0, 802, 682, 0, 0, 0, 0, 728, 738, 0, 0, 0, 0, 664, 776, 0, 0, 0, 0, 574, 776, 0, 0, 0, 0, 484, 784, 0, 0, 0, 0, 366, 776, 0, 0, 0, 0, 248, 766, 0, 0, 0, 0, 128, 754, 0, 0, 0, 0, -14, 750, 0, 0, 0, 0, -98, 740)
+}
+point_count = 17
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0qjkh")
+
+[node name="Player" parent="." instance=ExtResource("1_0sfp7")]
+position = Vector2(882, 987)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground"]
+z_index = -3
+texture_filter = 1
+position = Vector2(513, -4)
+texture = ExtResource("5_ao0l2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("6_fs1ud")]
+player = NodePath("../../Player")
+
+[node name="Area2D" parent="." instance=ExtResource("4_4ufw2")]
+position = Vector2(500, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("2_cwasa")]
+position = Vector2(713, 89)
+
+[node name="Path2D" parent="." instance=ExtResource("7_xw3mg")]
+curve = SubResource("Curve2D_b7t4s")

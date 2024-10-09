@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhe1ry8vmw80t"]
+
+[ext_resource type="Script" path="res://scripts/path_enemy_spawner.gd" id="1_1vkty"]
+
+[sub_resource type="Curve2D" id="Curve2D_p4wb5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 459, 1, 0, 0, 0, 0, 424, 153, 0, 0, 0, 0, 352, 316, 0, 0, 0, 0, 305, 423)
+}
+point_count = 4
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_p4wb5")
+script = ExtResource("1_1vkty")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(305, 423)
+rotation = 1.98468
+progress = 451.039
+loop = false
