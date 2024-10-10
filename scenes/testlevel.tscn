@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmvkdft3qmbs6"]
 
-[ext_resource type="Script" path="res://scenes/testlevel.gd" id="1_0qjkh"]
+[ext_resource type="Script" path="res://scripts/testlevel.gd" id="1_0qjkh"]
 [ext_resource type="PackedScene" uid="uid://cinll7vto07tg" path="res://scenes/player.tscn" id="1_0sfp7"]
 [ext_resource type="PackedScene" uid="uid://cypj2dnv7vlfx" path="res://scenes/enemy.tscn" id="2_cwasa"]
 [ext_resource type="PackedScene" uid="uid://cslwla8d5y4ij" path="res://scenes/enemyspawner.tscn" id="4_4ufw2"]
@@ -48,7 +48,7 @@ position = Vector2(713, 89)
 [node name="Path2D" parent="." instance=ExtResource("7_xw3mg")]
 position = Vector2(19, 17)
 curve = SubResource("Curve2D_b7t4s")
-timerTime = 0.5
+timerTime = 7.0
 
 [node name="Path2D2" parent="." instance=ExtResource("7_xw3mg")]
 position = Vector2(19, 17)
