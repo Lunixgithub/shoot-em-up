@@ -8,7 +8,6 @@ func _ready():
 	timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 0.5
-	player.hitByPlayer.connect(die)
 	timer.timeout.connect(timeout)
 
 func _physics_process(delta):
@@ -18,7 +17,8 @@ func _physics_process(delta):
 	elif path.progress_ratio == 1:
 		velocity.y = movespeed
 		move_and_slide()
-
+	if position.y > 1000:
+		queue_free()
 
 		
 func _on_hit_detection_area_entered(area):
