@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://yhogj4jp02mu"]
+
+[ext_resource type="Script" path="res://scripts/shooting_component.gd" id="1_s61jb"]
+[ext_resource type="PackedScene" uid="uid://8ldlf4nleago" path="res://scenes/single_bullet.tscn" id="2_t0v4l"]
+
+[node name="shootingComponent" type="Node"]
+script = ExtResource("1_s61jb")
+bullet = ExtResource("2_t0v4l")

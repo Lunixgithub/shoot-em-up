@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_b7t4s"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 508, 15, 0, 0, 0, 0, 506, 269, 0, 0, 0, 0, 660, 306, 0, 0, 0, 0, 726, 346, 0, 0, 0, 0, 792, 394, 0, 0, 0, 0, 842, 480, 0, 0, 0, 0, 842, 582, 0, 0, 0, 0, 802, 682, 0, 0, 0, 0, 728, 738, 0, 0, 0, 0, 664, 776, 0, 0, 0, 0, 574, 776, 0, 0, 0, 0, 484, 784, 0, 0, 0, 0, 366, 776, 0, 0, 0, 0, 248, 766, 0, 0, 0, 0, 128, 754, 0, 0, 0, 0, -14, 750, 0, 0, 0, 0, -98, 740)
+"points": PackedVector2Array(0, 0, 0, 0, 508, 15, 0, 0, 0, 0, 506, 269, 0, 0, 0, 0, 660, 306, 0, 0, 0, 0, 726, 346, 0, 0, 0, 0, 792, 394, 0, 0, 0, 0, 842, 480, 0, 0, 0, 0, 842, 582, 0, 0, 0, 0, 802, 682, 0, 0, 0, 0, 728, 738, 0, 0, 0, 0, 664, 776, 0, 0, 0, 0, 574, 776, 0, 0, 0, 0, 484, 784, 0, 0, 0, 0, 366, 776, 0, 0, 0, 0, 248, 766, 0, 0, 0, 0, 128, 754, 0, 0, 0, 0, -14, 750, 0, 0, 0, 0, 534, 581)
 }
 point_count = 17
 
@@ -25,7 +25,7 @@ position = Vector2(882, 987)
 [node name="Background" type="Sprite2D" parent="ParallaxBackground"]
 z_index = -3
 texture_filter = 1
-position = Vector2(513, -4)
+position = Vector2(499, -4)
 texture = ExtResource("5_ao0l2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -40,4 +40,5 @@ position = Vector2(500, 0)
 position = Vector2(713, 89)
 
 [node name="Path2D" parent="." instance=ExtResource("7_xw3mg")]
+position = Vector2(19, 17)
 curve = SubResource("Curve2D_b7t4s")

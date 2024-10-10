@@ -12,8 +12,9 @@ signal hitByPlayer
 		else:
 			currentHealth = value
 		healthChanged.emit()
-var bullet = preload("res://scenes/bullet.tscn")
-const SPEED = 500
+		
+@export var bullet_type: PackedScene
+const SPEED = 700 #increased movespeed
 @onready var hurtbox = $hurtbox
 
 
@@ -49,9 +50,9 @@ func _physics_process(delta):
 		if $ShootTimer.is_stopped():
 			shoot()
 			
-	
+	#handle bullet spawn
 func shoot():
-	var bullet_inst = bullet.instantiate()
+	var bullet_inst = bullet_type.instantiate()
 	bullet_inst.position = self.position + Vector2(0, -80)
 	get_tree().get_root().add_child(bullet_inst)
 	$ShootTimer.start()
