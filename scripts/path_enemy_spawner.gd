@@ -1,7 +1,7 @@
 extends Path2D
 @export var enemy_scene = preload("res://scenes/enemy.tscn")
 @export var speed = 500
-@export var timerTime = 3
+@export var timerTime:float
 var enemy_list = [] 
 
 func _ready() -> void:
@@ -30,11 +30,10 @@ func _process(delta: float) -> void:
 	for pathfollow in enemy_list:
 		if pathfollow.progress_ratio < 1:
 			pathfollow.progress += speed * delta
-		else:
-			if pathfollow.get_child_count() != 0:
-				var enemy_instance = pathfollow.get_child(0)
-				if enemy_instance:
-					enemy_instance.movespeed = 500
+		elif pathfollow.get_child_count() != 0:
+			var enemy_instance = pathfollow.get_child(0)
+			if enemy_instance:
+				enemy_instance.movespeed = 500
 				
 			
 			

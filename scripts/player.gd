@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 signal healthChanged
-signal hitByPlayer
 
 @export var maxHealth: int
 @export var currentHealth: int:
@@ -47,16 +46,8 @@ func _physics_process(delta):
 
 	# Handle shooting
 	if Input.is_action_pressed("ui_accept"):
-		if $ShootTimer.is_stopped():
-			shoot()
+		$playerShootingComponent.shoot()
 			
-	#handle bullet spawn
-func shoot():
-	var bullet_inst = bullet_type.instantiate()
-	bullet_inst.position = self.position + Vector2(0, -80)
-	get_tree().get_root().add_child(bullet_inst)
-	$ShootTimer.start()
-
 
 func hitByEnemy():
 	print(currentHealth)

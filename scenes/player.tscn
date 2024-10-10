@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cinll7vto07tg"]
+[gd_scene load_steps=6 format=3 uid="uid://cinll7vto07tg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_aq8t6"]
 [ext_resource type="PackedScene" uid="uid://8ldlf4nleago" path="res://scenes/single_bullet.tscn" id="2_atcky"]
 [ext_resource type="Texture2D" uid="uid://x6hq4nm3hs05" path="res://sprites/Main Ship - Base - Full health.png" id="2_i0fqm"]
+[ext_resource type="PackedScene" uid="uid://cepkfn0grjeci" path="res://scenes/player_shooting_component.tscn" id="4_m5p5p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yq5jy"]
 radius = 30.0
@@ -19,7 +20,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_i0fqm")
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 0.2
 
 [node name="hurtbox" type="Area2D" parent="."]
 
@@ -28,6 +29,10 @@ position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_yq5jy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
+zoom = Vector2(0.5, 0.5)
+
+[node name="playerShootingComponent" parent="." instance=ExtResource("4_m5p5p")]
+bullet = ExtResource("2_atcky")
+bulletSpawnPosition = -80
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

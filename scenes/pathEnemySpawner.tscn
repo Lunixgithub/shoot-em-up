@@ -8,5 +8,4 @@ script = ExtResource("1_1vkty")
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(426.142, 393.108)
 rotation = 0.805004
-progress = 451.039
 loop = false
